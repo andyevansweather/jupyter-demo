@@ -1,0 +1,25 @@
+<testsuite name="AviationDataProcessing.Scenarios to test aviation data processing" tests="2" errors="0" failures="0" skipped="0" time="63.462931" timestamp="2021-06-24T11:16:54.931330" hostname="LAP10BG272"><testcase classname="AviationDataProcessing.Scenarios to test aviation data processing" name="MSS files are correctly stored and logged" status="passed" time="32.167085"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: MSS files are correctly stored and logged
+    Given an icing_mlevs file needs to be processed by icingfilecreatedlambda ... passed in 0.007s
+    And it has arrived ... passed in 1.675s
+    When it is processed for 30 seconds ... passed in 30.009s
+    Then it is logged with [REPORT] ... passed in 0.476s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="AviationDataProcessing.Scenarios to test aviation data processing" name="non MSS files are logged and ignored" status="passed" time="31.295846"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: non MSS files are logged and ignored
+    Given an invalid file needs to be processed by icingfilecreatedlambda ... passed in 0.001s
+    And it has arrived ... passed in 0.489s
+    When it is processed for 30 seconds ... passed in 30.007s
+    Then it is logged with non-icing-file-received ... passed in 0.799s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>
